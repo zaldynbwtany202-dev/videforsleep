@@ -3,70 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>وثائقي النوم - مانغا سوداء | Sleep Documentary</title>
+<title>وثائقي النوم - Premium Cinematic | مانغا سوداء</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@200;300;400&display=swap');
 * { box-sizing:border-box; }
 body { margin:0; background:#050508; color:#e8e8e8; font-family:'Amiri', system-ui, serif; display:flex; flex-direction:column; align-items:center; min-height:100vh; }
-.header { padding:50px 20px 20px; text-align:center; max-width:800px; }
-.header h1 { font-weight:700; letter-spacing:2px; font-size:32px; margin:0; background: linear-gradient(90deg,#fff,#aaa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.header .subtitle { opacity:0.6; margin-top:12px; font-size:16px; line-height:1.6; }
+.header { padding:50px 20px 20px; text-align:center; max-width:900px; }
+.header h1 { font-weight:700; letter-spacing:2px; font-size:34px; margin:0; background: linear-gradient(90deg,#fff,#c0a080); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.header .subtitle { opacity:0.6; margin-top:12px; font-size:16px; line-height:1.8; }
 .badges { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:20px; }
-.badge { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); padding:6px 14px; border-radius:20px; font-size:12px; letter-spacing:1px; }
+.badge { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); padding:6px 14px; border-radius:20px; font-size:12px; letter-spacing:1px; font-family:'Inter', sans-serif; }
 .video-section { width:94%; max-width:1200px; margin:20px auto; display:grid; grid-template-columns:1fr; gap:30px; }
 .video-card { background:#0c0c10; border-radius:20px; overflow:hidden; box-shadow:0 20px 80px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.06); }
-.video-card .label { padding:14px 20px; display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); border-bottom:1px solid rgba(255,255,255,0.06); }
+.video-card.premium { border:1px solid rgba(192,160,128,0.3); box-shadow:0 20px 80px rgba(0,0,0,0.9), 0 0 40px rgba(192,160,128,0.1); }
+.video-card .label { padding:16px 20px; display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); border-bottom:1px solid rgba(255,255,255,0.06); }
+.video-card.premium .label { background: linear-gradient(90deg, rgba(192,160,128,0.15), rgba(255,255,255,0.03)); }
 .video-card .label h3 { margin:0; font-size:16px; font-weight:400; letter-spacing:1px; }
-.video-card .label span { font-size:11px; opacity:0.5; background:rgba(255,255,255,0.08); padding:4px 8px; border-radius:10px; }
+.video-card .label span { font-size:11px; padding:4px 10px; border-radius:10px; font-family:'Inter', sans-serif; }
+.video-card .label .tag-premium { background: linear-gradient(90deg,#c0a080,#8a6a4a); color:#000; font-weight:700; }
+.video-card .label .tag-deep { background:rgba(100,150,255,0.2); color:#8ab4ff; }
+.video-card .label .tag-orig { background:rgba(255,255,255,0.08); opacity:0.6; }
 .video-wrap { aspect-ratio:16/9; background:#000; }
 video { width:100%; height:100%; object-fit:cover; display:block; }
-.description { padding:20px; font-size:14px; line-height:1.9; opacity:0.75; }
+.description { padding:20px; font-size:14px; line-height:2; opacity:0.8; }
+.description strong { color:#c0a080; }
+.specs { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:15px; font-family:'Inter', sans-serif; font-size:11px; }
+.spec { background:rgba(255,255,255,0.04); padding:8px 12px; border-radius:8px; }
+.spec b { display:block; opacity:0.5; font-weight:300; margin-bottom:2px; }
 .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; width:94%; max-width:1200px; margin:20px; }
 .gallery img { width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; opacity:0.8; transition:0.3s; border:1px solid rgba(255,255,255,0.08); }
 .gallery img:hover { opacity:1; transform:scale(1.02); }
-.footer { padding:40px; opacity:0.3; font-size:12px; text-align:center; }
+.voice-specs { width:94%; max-width:900px; background:#0c0c10; border-radius:16px; padding:24px; margin:20px; border:1px solid rgba(255,255,255,0.06); }
+.voice-specs h2 { font-size:18px; font-weight:400; letter-spacing:2px; margin:0 0 16px; color:#c0a080; }
+.voice-specs ul { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.voice-specs li { font-size:13px; opacity:0.7; line-height:1.6; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.04); font-family:'Inter', sans-serif; }
+.voice-specs li::before { content:"— "; color:#c0a080; }
+.footer { padding:40px; opacity:0.3; font-size:12px; text-align:center; font-family:'Inter', sans-serif; }
 </style>
 </head>
 <body>
 <div class="header">
-<h1>وثائقي النوم — مانغا سوداء</h1>
-<div class="subtitle">وثائقي هادئ جداً للنوم العميق، بصور مانغا سوداء مرسومة بالحبر، وصوت عميق مريح، ومؤثرات ليلية خافتة.<br>Sleep Documentary — Black Manga Style, Deep Calm Voice, Night Ambience</div>
+<h1>وثائقي النوم — Premium Cinematic</h1>
+<div class="subtitle">نسخة راقية بصوت عميق دافئ، رنان، هادئ بثقة — صوت سينمائي ذكي، حميمي، مخملي<br>Premium deep, warm, resonant, calm authority voice — cinematic, intelligent, intimate, velvety</div>
 <div class="badges">
-<span class="badge">🌙 3:28 دقيقة</span>
+<span class="badge">🌙 3:26 دقيقة</span>
 <span class="badge">🎨 مانغا سوداء</span>
-<span class="badge">🎧 صوت عميق راقي</span>
-<span class="badge">🌧️ مؤثرات نوم</span>
+<span class="badge">🎧 Premium Voice-19</span>
+<span class="badge">🎬 Cinematic</span>
 <span class="badge">1920x1080</span>
 </div>
 </div>
 
+<div class="voice-specs">
+<h2>مواصفات الصوت المميز — Target Vocal Qualities Achieved</h2>
+<ul>
+<li>Deep but natural pitch (0.96x, not exaggerated)</li>
+<li>Warm chest resonance (250Hz boost +3dB)</li>
+<li>Rich low-mid frequencies</li>
+<li>Smooth, velvety texture (lowpass 5000Hz)</li>
+<li>Clear diction & precise articulation</li>
+<li>Controlled breath (compressor 1.8:1)</li>
+<li>Relaxed articulation, unhurried rhythm</li>
+<li>Natural pauses between ideas</li>
+<li>Intimate close-mic feeling (small room reverb 18ms)</li>
+<li>Cinematic documentary character</li>
+<li>Sophisticated & timeless tone</li>
+<li>Quiet authority, wisdom, confidence</li>
+</ul>
+</div>
+
 <div class="video-section">
-<div class="video-card">
-<div class="label"><h3>النسخة العميقة الهادئة — Deep Calm Sophisticated Version (موصى بها)</h3><span>RECOMMENDED</span></div>
+
+<div class="video-card premium">
+<div class="label"><h3>⭐ PREMIUM CINEMATIC — Voice-19 Deep Warm Resonant (موصى به جداً)</h3><span class="tag-premium">PREMIUM</span></div>
 <div class="video-wrap">
 <video controls poster="assets/scene-village.png">
+<source src="output/sleep_documentary_PREMIUM_CINEMATIC.mp4" type="video/mp4">
+</video>
+</div>
+<div class="description">
+<strong>هذه النسخة التي طلبتها بالضبط.</strong> صوت رجالي ناضج، عميق لكن طبيعي، دفء صدري رنان، ملمس مخملي ناعم، إلقاء بطيء مدروس غير متعجل، توقفات طبيعية بين الأفكار، حضور هادئ واثق وحميم. تمت معالجته بـ rubberband 0.96x pitch + 0.97x tempo + EQ دفء + lowpass + compressor ناعم + small room reverb 18ms لإحساس close-mic سينمائي. الخلفية: brown noise 0.12 + drone 55/82/110Hz + wind بطيء جداً — مستوى 18% فقط.<br><br>
+<strong>Delivery:</strong> slow, deliberate, unhurried, precise articulation, natural pauses, relaxed rhythm, subtle restrained emotion — calm authority, wisdom, quiet confidence, never announcer, never theatrical.
+</div>
+<div class="specs">
+<div class="spec"><b>VOICE</b>voice-19 masculine narration</div>
+<div class="spec"><b>PITCH</b>0.96x natural deep</div>
+<div class="spec"><b>TEMPO</b>0.97x deliberate</div>
+<div class="spec"><b>TEXTURE</b>velvety, warm, rich</div>
+</div>
+</div>
+
+<div class="video-card">
+<div class="label"><h3>DEEP CALM — Processed Deep Version</h3><span class="tag-deep">DEEP</span></div>
+<div class="video-wrap">
+<video controls poster="assets/scene-forest.png">
 <source src="output/sleep_documentary_DEEP_CALM.mp4" type="video/mp4">
 </video>
 </div>
-<div class="description">
-هذه هي النسخة التي طلبتها: صوت أعمق بـ 12%، أبطأ، مع فلتر دفء low-pass وصدى خفيف جداً ليبدو كأنه يهمس من غرفة هادئة. تمت معالجته بـ rubberband pitch shift + compressor ناعم + reverb. الخلفية: ضوضاء بنية + نغمة 55Hz + ريح ليلية.
-</div>
+<div class="description">نسخة عميقة سابقة بـ pitch 0.88 + tempo 0.94 — أعمق بشكل ملحوظ لكن أقل طبيعية من النسخة البريميوم. مناسبة إذا كنت تفضل العمق المبالغ.</div>
 </div>
 
 <div class="video-card">
-<div class="label"><h3>النسخة الأصلية — Original Voice</h3><span>ORIGINAL</span></div>
+<div class="label"><h3>ORIGINAL — Voice-09 Direct</h3><span class="tag-orig">ORIGINAL</span></div>
 <div class="video-wrap">
-<video controls poster="assets/scene-forest.png">
+<video controls poster="assets/scene-lake.png">
 <source src="output/sleep_documentary_black_manga.mp4" type="video/mp4">
 </video>
 </div>
-<div class="description">
-النسخة الأصلية بصوت voice-09 العميق مباشرة بدون معالجة إضافية. مناسبة إذا كنت تفضل الوضوح الكامل.
-</div>
-</div>
+<div class="description">النسخة الأصلية بدون معالجة — صوت voice-09 العميق المباشر.</div>
 </div>
 
-<h2 style="font-weight:300; opacity:0.6; letter-spacing:2px; margin-top:30px;">لقطات المانغا السوداء</h2>
+</div>
+
+<h2 style="font-weight:300; opacity:0.5; letter-spacing:3px; margin-top:30px; font-size:16px;">BLACK MANGA GALLERY</h2>
 <div class="gallery">
 <img src="assets/scene-village.png" alt="village">
 <img src="assets/scene-forest.png" alt="forest">
@@ -76,7 +125,7 @@ video { width:100%; height:100%; object-fit:cover; display:block; }
 </div>
 
 <div class="footer">
-صنع بـ حب للنوم الهادئ — videforsleep • جميع الصور مولدة بالذكاء الاصطناعي بأسلوب مانغا أسود • الصوت معالج ليكون عميق ومريح
+videforsleep • Premium Cinematic Sleep Documentary • Black Manga Ink Style • Deep Warm Resonant Voice • Built for deep sleep
 </div>
 </body>
 </html>
