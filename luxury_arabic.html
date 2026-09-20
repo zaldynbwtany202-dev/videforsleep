@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أصوات عربية فخمة - Luxury Arabic Voices</title>
+<style>
+body { background:#020205; color:#e8e8e8; font-family:system-ui; padding:20px; }
+h1 { color:#c0a080; text-align:center; font-family:serif; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; max-width:1200px; margin:20px auto; }
+.card { background:#0c0c12; border:1px solid rgba(192,160,128,0.2); border-radius:16px; padding:20px; }
+.card h3 { color:#c0a080; margin:0 0 10px; }
+audio { width:100%; margin:10px 0; }
+.btn { display:inline-block; padding:10px 20px; background:#c0a080; color:#000; border-radius:10px; font-weight:700; text-decoration:none; margin:5px; cursor:pointer; border:none; }
+.meta { font-size:12px; opacity:0.5; }
+.selected { border-color:#c0a080; box-shadow:0 0 20px rgba(192,160,128,0.3); }
+</style>
+</head>
+<body>
+<h1>✨ أصوات عربية فخمة — اختر صوتك</h1>
+<p style="text-align:center; opacity:0.6;">4 أصوات فخمة جديدة، عميقة، مخملية، مثل لكزس وساعة سويسرية</p>
+
+<div class="grid">
+
+<div class="card" id="card-86">
+<h3>🌙 صوت 86 — فخامة الليل الهادئ</h3>
+<div class="meta">عميق، دافئ، تأملي، فلسفي</div>
+<audio controls><source src="voices_library/samples/voice-86_lux_sample.mp3" type="audio/mpeg"></audio>
+<p>في ليلة هادئة، تحت سماء مرصعة بالنجوم...</p>
+<button class="btn" onclick="selectVoice('voice-86')">✅ اختر هذا الصوت</button>
+</div>
+
+<div class="card" id="card-87">
+<h3>🚗 صوت 87 — فخامة لكزس</h3>
+<div class="meta">مخملي، سيارة فاخرة، جلد ناعم، هدوء مطلق</div>
+<audio controls><source src="voices_library/samples/voice-87_lux_sample.mp3" type="audio/mpeg"></audio>
+<p>صوت الليل، عميق، دافئ، مخملي...</p>
+<button class="btn" onclick="selectVoice('voice-87')">✅ اختر هذا الصوت</button>
+</div>
+
+<div class="card" id="card-88">
+<h3>⌚ صوت 88 — ساعة سويسرية</h3>
+<div class="meta">دقيق، مدروس، صمت فاخر، ثقة</div>
+<audio controls><source src="voices_library/samples/voice-88_lux_sample.mp3" type="audio/mpeg"></audio>
+<p>الفخامة ليست ضجيجاً، بل صمت مدروس...</p>
+<button class="btn" onclick="selectVoice('voice-88')">✅ اختر هذا الصوت</button>
+</div>
+
+<div class="card" id="card-89">
+<h3>💎 صوت 89 — حرير وذهب</h3>
+<div class="meta">حميمي، قريب، دافئ، همس فاخر</div>
+<audio controls><source src="voices_library/samples/voice-89_lux_sample.mp3" type="audio/mpeg"></audio>
+<p>مرحباً بك في عالم الهدوء الفاخر...</p>
+<button class="btn" onclick="selectVoice('voice-89')">✅ اختر هذا الصوت</button>
+</div>
+
+</div>
+
+<div style="text-align:center; margin:30px;">
+<h3>🎬 الأصوات السابقة (فخمة أيضاً):</h3>
+<p>
+<a class="btn" href="japanese_lux.html" style="background:#222; color:#fff;">اليابانية الفاخرة (63-66)</a>
+<a class="btn" href="new_samples.html" style="background:#222; color:#fff;">العربية الطبيعية (44-51)</a>
+<a class="btn" href="videos.html" style="background:#222; color:#fff;">جميع الفيديوهات</a>
+</p>
+</div>
+
+<script>
+function selectVoice(id) {
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('selected'));
+  document.getElementById('card-'+id.split('-')[1]).classList.add('selected');
+  // Save to localStorage and redirect to tool
+  localStorage.setItem('selectedVoice', id);
+  alert('تم اختيار ' + id + ' — سيتم إنشاء الفيديو بهذا الصوت الفخم!');
+  // Call API to build video
+  fetch('/select_voice', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({voice_id:id})})
+  .then(r=>r.json()).then(d=>{ console.log(d); });
+}
+</script>
+
+</body>
+</html>
